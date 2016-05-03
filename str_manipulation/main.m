@@ -46,9 +46,20 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"%@",inputString);
                 }
                 if (operation == 3) {
-                    int intValue = [[NSString stringWithFormat:@"%s", string] intValue];
-
-                    NSLog(@"%d",intValue);
+                    
+                    NSScanner *scan = [NSScanner scannerWithString:inputString];
+                    
+                    if (![scan scanFloat:NULL] || ![scan isAtEnd])
+                    {
+                        NSLog(@"Cannot be converted to a number");
+                       
+                        
+                    }
+                    else
+                    {
+                        NSLog(@"%@",inputString);
+                    }
+                    
                 }
                 if (operation == 4) {
                     inputString = [inputString stringByAppendingString:@", eh?"];
